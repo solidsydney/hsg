@@ -1,0 +1,29 @@
+<div class="container">
+    <%= form_for @student, :url => wizard_path, :html => {:multipart => true, :class => "form-signin" } do |f| %>
+        <% if @student.errors.any? %>
+            <div class="error_messages">
+              <h2><%= pluralize(@student.errors.count, "error") %> prohibited this Information from being saved:</h2>
+              <ul>
+                <% @student.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+      <div class="alert alert-info">
+        <p class="muted" style="margin-bottom: 0;"> please not that all the fields marked with <span style="color: red"> * </span> are compulsory and make sure you enter the correct details before proceding to the next level
+        </p>
+      </div>
+        <%= yield f %>
+      <br />
+
+        <div class="actions">
+          <% if step == :social %>
+            <%= f.submit "Finish", :class => "btn btn-lg btn-primary btn-block" %>
+          <% else %>
+            <%= f.submit "Next Step", :class => "btn btn-lg btn-primary btn-block" %>
+          <% end %>
+          Or  <%= link_to "back to previous step", previous_wizard_path unless step == :personal %>      |     <%= link_to "skip this step", next_wizard_path unless step == :social %>
+        </div>
+    <% end %>
+</div>

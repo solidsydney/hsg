@@ -1,0 +1,13 @@
+<ul id="comments">
+  <% @comments.each do |comment| %>
+      <div class="row comment-cont">
+        <div class="comment-image"> <%=image_tag comment.student.photo.url(:mini) %> </div>
+        <div class="comment-body">
+          <h6><%= comment.student.lastname + " " + comment.student.firstname %>'s comment: </h6>
+            <p><%= comment.body %></p>
+        </div>
+      </div>
+
+
+  <% end %>
+</ul>

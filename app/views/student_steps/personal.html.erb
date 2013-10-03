@@ -1,0 +1,40 @@
+
+<h1 class = "signin-heading" >Tell Us A Little About Yourself</h1>
+<%= render :layout => 'form' do |f| %>
+    <div class="field">
+      <%= f.label :firstname %><br />
+      <%= f.text_field :firstname, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :middlename %><br />
+      <%= f.text_field :middlename, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :lastname %><br />
+      <%= f.text_field :lastname, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :date_of_birth %><br />
+      <%= f.text_field :date_of_birth, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_number %><br />
+      <%= f.text_field :phone_number, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :home_address %><br />
+      <%= f.text_field :home_address, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :state_of_origin %><br />
+      <%= f.text_field :state_of_origin, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :local_government_area %><br />
+      <%= f.text_field :lga, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :nationality %><br />
+      <%= f.text_field :nationality, :class => "form-control"  %>
+    </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h1 class="signin-heading">Tell Us A Little About Your School </h1>
+<%= render :layout => 'form' do |f| %>
+    <div class="field">
+      <%= f.label :school %><br />
+      <%= f.text_field :school_name, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :registration_number %><br />
+      <%= f.text_field :reg_number, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :year_of_entry %><br />
+      <%= f.text_field :year_of_entry, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :discipline %><br />
+      <%= f.text_field :discipline, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :best_subjects %><br />
+      <%= f.text_field :best_subject, :class => "form-control"  %>
+    </div>
+<% end %>

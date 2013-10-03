@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gist.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @gist.body %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @gist.student_id %>
+</p>
+
+<%= link_to 'Edit', edit_gist_path(@gist) %> |
+<%= link_to 'Back', gists_path %>
+
+<%= render "comments/comment" %>
+<%= render "comments/form" %>

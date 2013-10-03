@@ -1,0 +1,66 @@
+<%= render 'header' %>
+<%= render 'side_content' %>
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <% if @feeds.empty? %>
+              <div class="alert alert-info">
+                <P>No feed content to display at this time. feeds are generated according to application usage. So invite people and get more info.</P>
+              </div>
+              <% else %>
+
+          <% @feeds.each do |feed| %>
+
+              <% if feed.class == Assignment %>
+                  <div class="row">
+                    <%= image_tag feed.student.photo.url(:mini) %>
+                    <%= feed.subject %>
+                    <%= feed.question %>
+
+                  </div>
+
+              <% elsif feed.class == Gist %>
+                  <div class="row">
+                    <%= image_tag feed.student.photo.url(:mini) %>
+                    <%= feed.title %>
+                    <%= feed.body %>
+                  </div>
+
+
+
+              <% elsif feed.class == Picture %>
+                  <div class="row">
+                    <%= image_tag feed.student.photo.url(:mini) %>
+                    <%=image_tag feed.photo.url(:medium) %>
+
+                  </div>
+
+
+
+
+              <% elsif feed.class == Event %>
+                  <div class="row">
+                    <%= feed.description %>
+                    <%= feed.event_date %>
+                    <%= feed.end_date %>
+                    <% feed.duration %>
+                    <%= feed.external_links %>
+
+                  </div>
+
+              <% end %>
+          <% end %>
+        <% end %>
+
+        </div>
+        <div class="col-md-4">
+
+            <h2>Quiz (Answer to earn points)</h2>
+
+        </div>
+
+
+
+    </div>
+</div>

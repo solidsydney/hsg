@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @assignment.subject %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @assignment.question %>
+</p>
+
+<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%= link_to 'Back', assignments_path %>
+
+<%= render "comments/comment" %>
+<%= render "comments/form" %>

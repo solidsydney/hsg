@@ -1,0 +1,15 @@
+
+    <% @pictures.each do |picture| %>
+      <div>
+        <%= image_tag picture.photo.url(:thumb) %>
+        <%= link_to "View", picture %>
+        <%= link_to "Delete pics", picture, :method => :delete, :confirm => "are you sure you want to delete this picture" %>
+      </div>
+
+
+    <% end %>
+
+
+<hr>
+
+<%= link_to 'New Picture', new_picture_path %>

@@ -1,0 +1,31 @@
+<h1 class="signin-heading">Tell Us A Little About Your Social Life </h1>
+<%= render :layout => 'form' do |f| %>
+    <div class="field">
+      <%= f.label :facebook_username %><br />
+      <%= f.text_field :facebook, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :twitter_handle %><br />
+      <%= f.text_field :twitter, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label "Google+" %><br />
+      <%= f.text_field :google_plus, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :likes %><br />
+      <%= f.text_field :likes, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :dislikes %><br />
+      <%= f.text_field :dislikes, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.label :hobbies %><br />
+      <%= f.text_field :hobbies, :class => "form-control"  %>
+    </div>
+    <div class="field">
+      <%= f.file_field :photo %>
+      Select Photo to Upload (allowed *.jpg *.png *.gif)
+    </div>
+<% end %>
